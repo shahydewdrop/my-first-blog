@@ -1,21 +1,17 @@
 <ht<html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Dewdrop Shaheena</title>
     </head>
     <body>
         <div>
             <h1><a href="/">Dewdrop  Shaheena</a></h1>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>To be the catalyst that inspires people to find the purposefulness and discover their individual genius! is my vision </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>After working in the corporate field for 20 years, from clerical to managerial posts in business administration, accounts, finance, and management, Dewdrop Shaheena experienced the challenges faced by leaders to manage employees. She then decided to quit her career in finance and switched it to peoples’ development. Below are the core problems she experienced. .</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
